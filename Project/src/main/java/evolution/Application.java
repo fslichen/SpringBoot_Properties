@@ -1,9 +1,13 @@
 package evolution;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import evolution.bean.AnotherBean;
+import evolution.bean.AnyBean;
 
 @SpringBootApplication
 public class Application implements CommandLineRunner {
@@ -19,6 +23,12 @@ public class Application implements CommandLineRunner {
 	@Value("Champaign")// Directly injects Champaign into address.
 	private String address;
 	
+	@Autowired
+	private AnyBean anyBean;
+	
+	@Autowired
+	private AnotherBean anotherBean;
+	
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args).stop();
 	}
@@ -26,6 +36,6 @@ public class Application implements CommandLineRunner {
 	@Override
 	public void run(String... arg0) throws Exception {
 		System.out.println(this.name + " " + this.gender 
-				+ " " + this.age + " " + this.address);
+				+ " " + this.age + " " + this.address + " " + this.anyBean + " " + this.anotherBean);
 	}
 }
