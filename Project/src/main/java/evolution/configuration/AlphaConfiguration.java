@@ -11,7 +11,7 @@ import evolution.bean.Teacher;
 @PropertySource("classpath:anyFolder/alphaProperties.properties")// Specifies the properties file location.
 @ConfigurationProperties("school")// Reads properties files with "school" prefixes.
 public class AlphaConfiguration {
-	private Teacher teacher = new Teacher();
+	private Teacher teacher = new Teacher();// Able to read properties like teacher.name and teacher.gender.
 	
 	public Teacher getTeacher() {
 		return teacher;
