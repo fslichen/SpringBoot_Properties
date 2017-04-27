@@ -8,7 +8,7 @@ import org.springframework.context.annotation.PropertySource;
 import evolution.bean.Teacher;
 
 @Configuration
-@PropertySource("classpath:anyFolder/alphaProperties.properties")
+@PropertySource("classpath:anyFolder/alphaProperties.properties")// Specifies the properties file location.
 @ConfigurationProperties("school")// Reads properties files with "school" prefixes.
 public class AlphaConfiguration {
 	private Teacher teacher = new Teacher();
