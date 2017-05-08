@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import evolution.bean.AnotherBean;
 import evolution.bean.AnyBean;
+import evolution.bean.BetaBean;
 import evolution.bean.Teacher;
 import evolution.bean.TheOtherBean;
 
@@ -37,6 +38,9 @@ public class Application implements CommandLineRunner {
 	@Autowired
 	private Teacher teacher;
 	
+	@Autowired
+	private BetaBean betaBean;
+	
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args).stop();
 	}
@@ -46,6 +50,6 @@ public class Application implements CommandLineRunner {
 		System.out.println(this.name + " " + this.gender 
 				+ " " + this.age + " " + this.address + " " 
 				+ this.anyBean + " " + this.anotherBean + " "
-				+ this.theOtherBean + " " + this.teacher);
+				+ this.theOtherBean + " " + this.teacher + " " + this.betaBean);
 	}
 }
